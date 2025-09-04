@@ -1,0 +1,717 @@
+/* --- LOCAL FONT DEFINITIONS REMOVED --- */
+/* All text will now use the browser's default sans-serif font. */
+
+
+/* ОБЩИЕ СТИЛИ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    /* Global font for the entire site */
+    font-size: 14px;
+    line-height: 1.7;
+    color: #0f0d0e;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    font-weight: 400;
+    /* Normal weight */
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    /* Bold weight */
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 66px;
+    height: 3px;
+    background-color: #e1d9bd;
+    margin: 10px auto 0;
+}
+
+/* ШАПКА САЙТА */
+.header {
+    background-color: #000;
+    background-image: url('../images/banner-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    /* Bold weight */
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.logo-highlight {
+    color: #b59f5b;
+}
+
+
+.nav-list {
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 35px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    text-align: center;
+    padding-top: 85px;
+    padding-bottom: 125px;
+}
+
+.intro-title {
+    font-size: 45px;
+    font-weight: 400;
+    /* Normal weight */
+    color: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+/* СЕКЦИЯ "В ТРЕНДЕ" */
+.trending {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.trending .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    /* Bold weight */
+    margin-bottom: 25px;
+}
+
+.trending-grid {
+    display: flex;
+    gap: 4px;
+}
+
+.trending-item {
+    flex: 1;
+    min-height: 320px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    z-index: 1;
+}
+
+.trending-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.trending-content {
+    border: 3px solid rgba(181, 159, 91, 0.6);
+    padding: 30px;
+    width: 100%;
+}
+
+.trending-title {
+    font-size: 18px;
+    font-weight: 700;
+    /* Bold weight */
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.trending-title a:hover {
+    color: #b59f5b;
+}
+
+
+/* ОСНОВНОЙ КОНТЕНТ */
+.main-content {
+    padding-bottom: 60px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles {
+    flex-basis: 780px;
+    margin-right: 120px;
+}
+
+.article {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.article:last-child {
+    margin-bottom: 0;
+}
+
+.article-image-container {
+    width: 380px;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+.article-image {
+    display: block;
+    width: 100%;
+}
+
+.article-tags {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.tag-link {
+    margin-right: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #b59f5b;
+}
+
+.tag-link:hover {
+    text-decoration: underline;
+}
+
+.article-title {
+    font-size: 20px;
+    font-weight: 700;
+    /* Bold weight */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.article-title a:hover {
+    color: #b59f5b;
+}
+
+.article-meta {
+    color: #888;
+    margin-bottom: 40px;
+    font-size: 12px;
+}
+
+.article-date {
+    margin-right: 15px;
+}
+
+.article-author {
+    font-weight: 700;
+    /* Bold weight */
+    font-style: normal;
+    color: #0f0d0e;
+}
+
+.article-text {
+    font-size: 15px;
+}
+
+/* САЙДБАР */
+.sidebar {
+    width: 270px;
+    flex-shrink: 0;
+}
+
+.widget {
+    margin-bottom: 50px;
+}
+
+.widget-title {
+    font-size: 14px;
+}
+
+.post-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.post-image-container {
+    width: 70px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.post-image {
+    width: 100%;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.post-title a {
+    font-weight: 700;
+    /* Bold weight */
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.post-title a:hover {
+    color: #b59f5b;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-field {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f4f7f6;
+    font-size: 13px;
+}
+
+.search-field:focus {
+    outline: 1px solid #b59f5b;
+}
+
+.search-button {
+    width: 48px;
+    border: none;
+    background-color: #b59f5b;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath fill='%23FFF' d='M17.8 16.7L13.1 12c.9-1.2 1.4-2.7 1.4-4.2 0-4.1-3.3-7.4-7.4-7.4S-.1 3.7-.1 7.8s3.3 7.4 7.4 7.4c1.5 0 2.9-.5 4.1-1.3l4.7 4.7c.3.3.7.3 1 0l.7-.7c.3-.2.3-.6 0-.9zM7.4 13.2c-3 0-5.4-2.4-5.4-5.4s2.4-5.4 5.4-5.4 5.4 2.4 5.4 5.4-2.4 5.4-5.4 5.4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #323232;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-field {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f4f7f6;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.newsletter-field:focus {
+    outline: 1px solid #b59f5b;
+}
+
+.newsletter-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #b59f5b;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.newsletter-button:hover {
+    background-color: #323232;
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags-list li {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.tag {
+    display: block;
+    padding: 5px 12px;
+    border: 3px solid #eee;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.tag:hover {
+    border-color: #b59f5b;
+}
+
+.topics-list li {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+
+.topic-link {
+    font-weight: 700;
+}
+
+.topic-link:hover {
+    color: #b59f5b;
+}
+
+.topic-count {
+    color: #b59f5b;
+    margin-left: 5px;
+    vertical-align: super;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* СЕКЦИЯ "ИЗДЕЛИЯ" */
+.products {
+    padding-bottom: 60px;
+}
+
+.products-grid {
+    display: flex;
+    gap: 60px;
+}
+
+.product-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image-container {
+    padding: 0 20px;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.product-content {
+    border: 3px solid #b59f5b;
+    padding: 40px 20px 20px 20px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 2;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-weight: 700;
+    /* Bold weight */
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.product-description {
+    font-size: 15px;
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.product-description a {
+    color: #b59f5b;
+    text-decoration: none;
+}
+
+.product-link-highlight {
+    color: #b59f5b;
+    /* This is the brand's gold color */
+}
+
+.product-link-highlight:hover {
+    text-decoration: underline;
+    /* Adds an underline when you hover */
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.product-prices {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-price-old {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: line-through;
+    color: #888;
+    line-height: 1;
+    /* Add this line */
+}
+
+.product-price {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    /* And add this line */
+}
+
+.product-button {
+    background-color: #b59f5b;
+    color: #fff;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.product-button:hover {
+    background-color: #323232;
+}
+
+
+/* ПОДВАЛ */
+.footer {
+    padding-bottom: 40px;
+}
+
+.socials {
+    background-color: #f4f7f6;
+    padding: 25px 0;
+    margin-bottom: 40px;
+}
+
+.socials-list {
+    display: flex;
+    justify-content: center;
+}
+
+.socials-list li {
+    margin: 0 12px;
+}
+
+.social-link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.social-link[aria-label="Dribbble"] {
+    background-image: url("../images/001-dribbble.svg");
+}
+
+.social-link[aria-label="Pinterest"] {
+    background-image: url("../images/002-pinterest.svg");
+}
+
+.social-link[aria-label="Tumblr"] {
+    background-image: url("../images/003-tumblr.svg");
+}
+
+
+.copyright {
+    text-align: center;
+    color: #999999;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* POP-UP STYLES */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 390px;
+    position: relative;
+}
+
+.close-popup-btn {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 357 357'%3E%3Cpath fill='%23fff' d='M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z'/%3E%3C/svg%3E");
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-form .form-group {
+    margin-bottom: 25px;
+}
+
+.popup-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.popup-select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f4f7f6;
+    font-size: 13px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 16'%3E%3Cpath fill='%23b59f5b' d='M5 0L0 6h10L5 0zM5 16l5-6H0l5 6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+}
+
+.popup-textarea {
+    width: 100%;
+    min-height: 130px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f4f7f6;
+    font-size: 13px;
+    resize: vertical;
+}
+
+.radio-group {
+    display: flex;
+}
+
+.radio-label {
+    margin-right: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Hide default radio button */
+.radio-input {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Custom radio button style */
+.radio-input::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-right: 10px;
+    background-color: #f4f7f6;
+    vertical-align: middle;
+}
+
+/* Style for when radio is checked */
+.radio-input:checked::before {
+    border-color: #b59f5b;
+    background-image: radial-gradient(#b59f5b 50%, transparent 55%);
+}
