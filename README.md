@@ -1,17 +1,17 @@
-# NOÉMI Website Layout
+# Верстка сайта "NOÉMI"
 
-This is a diploma project focused on creating an adaptive blog website layout for "NOÉMI," built strictly according to provided .psd design mockups using pure HTML and CSS.
+Это проект по верстке адаптивного макета сайта "NOÉMI". Работа выполнена на HTML и CSS в соответствии с предоставленными дизайн-макетами в формате .psd.
 
-## 🚀 Technologies Used
-- **HTML5**: For creating semantically correct and structured markup.
-- **CSS3**: For styling all page elements.
-- **Flexbox**: Used for the entire grid structure, from main columns to galleries.
-- **JavaScript (native)**: A few lines of code to implement pop-up window interactivity.
+## 🚀 Использованные технологии
+- **HTML5**: Для создания семантически верной и структурированной разметки.
+- **CSS3**: Для стилизации всех элементов страницы.
+- **Flexbox**: Вся сеточная структура сайта, от основных колонок до галерей, построена с использованием Flexbox.
+- **JavaScript (нативный)**: Несколько строк кода для реализации интерактивности всплывающего окна (pop-up).
 
-## ✨ Key Features
-- **Semantic Markup**: Utilizes `<header>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>`, and other tags to enhance accessibility and SEO.
-- **Relative Paths**: All resource paths (fonts, images) are relative, ensuring full project portability.
-- **Local Fonts**: Fonts (Oswald, Open Sans) are connected locally using the `@font-face` rule.
-- **Pop-up Window**: A modal window with a contact form, triggered by clicking the "Contacts" menu item.
-- **Custom Form Elements**: Styled radio buttons and select elements to match the design.
-- **Pixel-Perfect Design**: All sizes, margins, colors, and fonts are meticulously aligned with the PSD mockup.
+## ✨ Ключевые особенности
+- **Семантическая верстка**: Использованы теги `<header>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<nav>` и другие для улучшения доступности и SEO.
+- **Полностью относительные пути**: Все пути к ресурсам (шрифты, изображения) являются относительными, что делает проект полностью переносимым.
+- **Локальные шрифты**: Шрифты (Oswald, Open Sans) подключены локально с помощью правила `@font-face`.
+- **Всплывающее окно (Pop-up)**: Реализовано модальное окно с формой обратной связи, которое появляется при клике на пункт меню "Контакты".
+- **Кастомные элементы форм**: Стилизованы radio buttons и select в соответствии с дизайном.
+- **Точное соответствие макету**: Все размеры, отступы, цвета и шрифты были тщательно выверены для максимального соответствия PSD-макету.
