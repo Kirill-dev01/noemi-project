@@ -780,6 +780,10 @@ p {
 /* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
 @media (max-width: 1200px) {
+    .header {
+        background-image: url('../images/banner-bg-tablet.jpg');
+    }
+
     .nav {
         display: none;
     }
@@ -855,18 +859,11 @@ p {
 
 
 @media (max-width: 640px) {
-
-    /* --- ДОБАВЬТЕ ЭТОТ БЛОК --- */
     .header {
         min-height: 100vh;
-        /* Делает шапку во весь экран по высоте */
-        background-image: url('../images/banner-bg-mobile.jpg');
-        /* Меняет картинку на мобильную */
+        background-image: url('../images/banner-mobile.jpg');
         background-position: center center;
-        /* Центрирует человека на скале */
     }
-
-    /* -------------------------- */
 
     .header-container {
         justify-content: space-between;
@@ -878,12 +875,13 @@ p {
     .logo {
         position: absolute;
         left: 50%;
+        top: 220px;
         transform: translateX(-50%);
     }
 
     .intro {
-        padding-top: 100px;
-        padding-bottom: 40px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .intro-title {
