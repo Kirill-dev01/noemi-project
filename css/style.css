@@ -780,10 +780,6 @@ p {
 /* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
 @media (max-width: 1200px) {
-    .header {
-        background-image: url('../images/banner-bg-tablet.jpg');
-    }
-
     .nav {
         display: none;
     }
@@ -835,6 +831,10 @@ p {
 
     .products-grid {
         flex-direction: column;
+    }
+
+    .header {
+        background-image: url('../images/banner-bg-tablet.jpg');
     }
 }
 
