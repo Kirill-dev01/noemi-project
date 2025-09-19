@@ -115,7 +115,7 @@ p {
     background-color: #000;
     background-image: url('../images/banner-bg.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     padding-top: 30px;
     position: relative;
@@ -860,9 +860,9 @@ p {
 @media (max-width: 640px) {
     .header {
         min-height: 100vh;
-        /* Make header full screen height */
         background-image: url('../images/banner-bg-mobile.jpg');
-        /* Use mobile background */
+        background-position: center center;
+        /* This is the key change */
     }
 
     .header-container {
