@@ -167,7 +167,6 @@ p {
     /* Скрыт по умолчанию */
     width: 24px;
     height: 18px;
-    /* Correct height for 3 lines */
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -781,44 +780,6 @@ p {
 /* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
 @media (max-width: 1200px) {
-    .nav {
-        display: none;
-    }
-
-    .menu-burger {
-        display: block;
-    }
-
-    .nav--open {
-        display: block;
-        position: absolute;
-        top: 60px;
-        /* Position it right below the header */
-        right: 15px;
-        width: 250px;
-        background-color: #fff;
-        z-index: 100;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .nav--open .nav-list {
-        flex-direction: column;
-        /* Stack the links vertically */
-    }
-
-    .nav--open .nav-item {
-        margin: 0;
-    }
-
-    .nav--open .nav-link {
-        display: block;
-        padding: 15px 20px;
-        text-align: left;
-        color: #000;
-        /* Change link color to black for readability */
-        border-bottom: 1px solid #eee;
-    }
-
     .content-wrapper {
         flex-direction: column;
     }
@@ -839,6 +800,41 @@ p {
 }
 
 @media (min-width: 641px) and (max-width: 1200px) {
+    .nav {
+        display: none;
+    }
+
+    .menu-burger {
+        display: block;
+    }
+
+    .nav--open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        width: 250px;
+        background-color: #fff;
+        z-index: 100;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav--open .nav-list {
+        flex-direction: column;
+    }
+
+    .nav--open .nav-item {
+        margin: 0;
+    }
+
+    .nav--open .nav-link {
+        display: block;
+        padding: 15px 20px;
+        text-align: left;
+        color: #000;
+        border-bottom: 1px solid #eee;
+    }
+
     .trending-grid {
         flex-wrap: wrap;
     }
@@ -864,7 +860,6 @@ p {
         flex-direction: row-reverse;
         width: 100%;
         padding: 0 15px;
-        /* Ensure padding is consistent */
     }
 
     .logo {
@@ -873,9 +868,16 @@ p {
         transform: translateX(-50%);
     }
 
+    .nav {
+        display: none;
+    }
+
+    .menu-burger {
+        display: block;
+    }
+
     .intro {
         padding-top: 100px;
-        /* Increase top padding to make space for the logo */
         padding-bottom: 40px;
     }
 
