@@ -13,7 +13,7 @@
     <header class="header">
         <div class="container header-container">
             <a href="#0" class="logo">
-                <h2 class="logo-text"><span class="logo-highlight">N</span>oémi</h2>
+                <img src="images/noemi-logo.svg" alt="Логотип NOÉMI" class="logo-image">
             </a>
             <nav class="nav">
                 <ul class="nav-list">
@@ -282,7 +282,11 @@
                 <div class="products-grid">
                     <article class="product-item">
                         <div class="product-image-container">
-                            <img src="images/shop-item-desk1.jpg" alt="Розовая подушка" class="product-image">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="images/shop-item-mobile1.jpg">
+                                <source media="(max-width: 1200px)" srcset="images/shop-item-tablet1.jpg">
+                                <img src="images/shop-item-desk1.jpg" alt="Розовая подушка" class="product-image">
+                            </picture>
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">Подушки на диван</h3>
@@ -293,13 +297,17 @@
                                     <span class="product-price-old">1000 ₽</span>
                                     <span class="product-price">800 ₽</span>
                                 </div>
-                                <button class="product-button">В магазин</button>
+                                <a href="#0" class="product-button">В магазин</a>
                             </div>
                         </div>
                     </article>
                     <article class="product-item">
                         <div class="product-image-container">
-                            <img src="images/shop-item-desk2.jpg" alt="Кукла в виде зайца" class="product-image">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="images/shop-item-mobile2.jpg">
+                                <source media="(max-width: 1200px)" srcset="images/shop-item-tablet2.jpg">
+                                <img src="images/shop-item-desk2.jpg" alt="Кукла в виде зайца" class="product-image">
+                            </picture>
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">Кукла «Зайчик»</h3>
@@ -308,13 +316,17 @@
                                 и несколько подкастов.</p>
                             <div class="product-footer">
                                 <span class="product-price">3500 ₽</span>
-                                <button class="product-button">В магазин</button>
+                                <a href="#0" class="product-button">В магазин</a>
                             </div>
                         </div>
                     </article>
                     <article class="product-item">
                         <div class="product-image-container">
-                            <img src="images/shop-item-desk3.jpg" alt="Шестиугольная рамка" class="product-image">
+                            <picture>
+                                <source media="(max-width: 640px)" srcset="images/shop-item-mobile3.jpg">
+                                <source media="(max-width: 1200px)" srcset="images/shop-item-tablet3.jpg">
+                                <img src="images/shop-item-desk3.jpg" alt="Шестиугольная рамка" class="product-image">
+                            </picture>
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">Шестиугольная рамка</h3>
@@ -326,7 +338,7 @@
                                     <span class="product-price-old">500 ₽</span>
                                     <span class="product-price">400 ₽</span>
                                 </div>
-                                <button class="product-button">В магазин</button>
+                                <a href="#0" class="product-button">В магазин</a>
                             </div>
                         </div>
                     </article>

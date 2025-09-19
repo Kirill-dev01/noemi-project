@@ -1,5 +1,40 @@
-/* --- LOCAL FONT DEFINITIONS REMOVED --- */
-/* All text will now use the browser's default sans-serif font. */
+/* --- LOCAL FONT DEFINITIONS --- */
+
+/* Oswald Font Files */
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+    font-weight: 400;
+    /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Bold.ttf') format('truetype');
+    font-weight: 700;
+    /* Bold */
+    font-style: normal;
+}
+
+/* Open Sans Font Files */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('../fonts/OpenSans-Regular.woff') format('woff'),
+        url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSans-Bold.woff') format('woff'),
+        url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 
 
 /* ОБЩИЕ СТИЛИ */
@@ -11,8 +46,7 @@
 
 body {
     margin: 0;
-    font-family: sans-serif;
-    /* Global font for the entire site */
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 14px;
     line-height: 1.7;
     color: #0f0d0e;
@@ -43,7 +77,6 @@ h4,
 p {
     margin: 0;
     font-weight: 400;
-    /* Normal weight */
 }
 
 .visually-hidden {
@@ -58,10 +91,11 @@ p {
 }
 
 .section-title {
+    font-family: 'Oswald', sans-serif;
     text-align: center;
     font-size: 16px;
     font-weight: 700;
-    /* Bold weight */
+    /* BOLD */
     text-transform: uppercase;
     margin-bottom: 28px;
     position: relative;
@@ -105,17 +139,8 @@ p {
     align-items: center;
 }
 
-.logo-text {
-    font-size: 32px;
-    font-weight: 700;
-    /* Bold weight */
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-.logo-highlight {
-    color: #b59f5b;
+.logo-image {
+    width: 180px;
 }
 
 
@@ -144,9 +169,10 @@ p {
 }
 
 .intro-title {
+    font-family: 'Oswald', sans-serif;
     font-size: 45px;
-    font-weight: 400;
-    /* Normal weight */
+    font-weight: 700;
+    /* BOLD */
     color: #ffffff;
     max-width: 700px;
     margin: 0 auto;
@@ -157,20 +183,20 @@ p {
 /* СЕКЦИЯ "В ТРЕНДЕ" */
 .trending {
     width: 100%;
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 .trending .section-title {
     font-size: 20px;
     font-weight: 700;
-    /* Bold weight */
+    /* BOLD */
     margin-bottom: 25px;
+    padding-top: 60px;
 }
 
 .trending-grid {
     display: flex;
     gap: 4px;
+    padding-bottom: 60px;
 }
 
 .trending-item {
@@ -181,7 +207,6 @@ p {
     position: relative;
     display: flex;
     align-items: flex-end;
-    padding: 20px;
     z-index: 1;
 }
 
@@ -199,13 +224,15 @@ p {
 .trending-content {
     border: 3px solid rgba(181, 159, 91, 0.6);
     padding: 30px;
-    width: 100%;
+    width: calc(100% - 40px);
+    margin: 20px;
 }
 
 .trending-title {
+    font-family: 'Oswald', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    /* Bold weight */
+    /* BOLD */
     text-transform: uppercase;
     color: #fff;
     line-height: 1.3;
@@ -268,9 +295,10 @@ p {
 }
 
 .article-title {
+    font-family: 'Oswald', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    /* Bold weight */
+    /* BOLD */
     margin-bottom: 25px;
     text-transform: uppercase;
     line-height: 1.2;
@@ -292,7 +320,7 @@ p {
 
 .article-author {
     font-weight: 700;
-    /* Bold weight */
+    /* BOLD */
     font-style: normal;
     color: #0f0d0e;
 }
@@ -336,8 +364,9 @@ p {
 }
 
 .post-title a {
+    font-family: 'Oswald', sans-serif;
     font-weight: 700;
-    /* Bold weight */
+    /* BOLD */
     text-transform: uppercase;
     line-height: 1.2;
 }
@@ -491,8 +520,9 @@ p {
 }
 
 .product-title {
+    font-family: 'Oswald', sans-serif;
     font-weight: 700;
-    /* Bold weight */
+    /* BOLD */
     font-size: 18px;
     text-transform: uppercase;
 }
@@ -508,14 +538,8 @@ p {
     text-decoration: none;
 }
 
-.product-link-highlight {
-    color: #b59f5b;
-    /* This is the brand's gold color */
-}
-
-.product-link-highlight:hover {
+.product-description a:hover {
     text-decoration: underline;
-    /* Adds an underline when you hover */
 }
 
 .product-footer {
@@ -533,19 +557,19 @@ p {
 .product-price-old {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
+    /* BOLD */
     font-size: 16px;
     text-decoration: line-through;
     color: #888;
     line-height: 1;
-    /* Add this line */
 }
 
 .product-price {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
+    /* BOLD */
     font-size: 20px;
     line-height: 1;
-    /* And add this line */
 }
 
 .product-button {
@@ -662,6 +686,7 @@ p {
     border: 1px solid #ddd;
     background-color: #f4f7f6;
     font-size: 13px;
+    font-family: inherit;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 16'%3E%3Cpath fill='%23b59f5b' d='M5 0L0 6h10L5 0zM5 16l5-6H0l5 6z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -676,6 +701,7 @@ p {
     border: 1px solid #ddd;
     background-color: #f4f7f6;
     font-size: 13px;
+    font-family: inherit;
     resize: vertical;
 }
 
@@ -714,4 +740,106 @@ p {
 .radio-input:checked::before {
     border-color: #b59f5b;
     background-image: radial-gradient(#b59f5b 50%, transparent 55%);
+}
+
+/* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
+
+@media (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .articles {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .products-grid {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1200px) {
+    .trending-grid {
+        flex-wrap: wrap;
+    }
+
+    .trending-item {
+        width: calc(50% - 2px);
+    }
+
+    /* Tablet Orientation Rules */
+    @media (orientation: landscape) {
+        .trending-item {
+            width: calc(25% - 3px);
+        }
+    }
+
+    @media (orientation: portrait) {
+        .trending-item {
+            width: calc(50% - 2px);
+        }
+    }
+}
+
+
+@media (max-width: 640px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .nav {
+        margin-top: 20px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .intro-title {
+        font-size: 28px;
+    }
+
+    .trending-grid {
+        flex-direction: column;
+    }
+
+    .article {
+        flex-direction: column;
+    }
+
+    .article-image-container {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    /* Mobile Orientation Rules */
+    .trending-grid {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    @media (orientation: landscape) {
+        .trending-item {
+            width: calc(50% - 2px);
+        }
+    }
+
+    @media (orientation: portrait) {
+        .trending-item {
+            width: 100%;
+        }
+    }
 }
