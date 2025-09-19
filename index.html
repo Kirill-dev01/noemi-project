@@ -401,36 +401,36 @@
     </div>
 
     <script>
-    // --- Pop-up Logic ---
-    const popup = document.getElementById('feedback-popup');
-    const showBtn = document.getElementById('show-popup-btn');
-    const closeBtn = document.getElementById('close-popup-btn');
+        // --- Pop-up Logic ---
+        const popup = document.getElementById('feedback-popup');
+        const showBtn = document.getElementById('show-popup-btn');
+        const closeBtn = document.getElementById('close-popup-btn');
 
-    function showPopup(event) {
-        event.preventDefault();
-        popup.style.display = 'flex';
-    }
-
-    function hidePopup() {
-        popup.style.display = 'none';
-    }
-
-    showBtn.addEventListener('click', showPopup);
-    closeBtn.addEventListener('click', hidePopup);
-    popup.addEventListener('click', function (event) {
-        if (event.target === popup) {
-            hidePopup();
+        function showPopup(event) {
+            event.preventDefault();
+            popup.style.display = 'flex';
         }
-    });
 
-    // --- Burger Menu Logic ---
-    const burgerBtn = document.querySelector('.menu-burger');
-    const navMenu = document.querySelector('.nav');
+        function hidePopup() {
+            popup.style.display = 'none';
+        }
 
-    burgerBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('nav--open');
-    });
-</script>
+        showBtn.addEventListener('click', showPopup);
+        closeBtn.addEventListener('click', hidePopup);
+        popup.addEventListener('click', function (event) {
+            if (event.target === popup) {
+                hidePopup();
+            }
+        });
+
+        // --- Burger Menu Logic ---
+        const burgerBtn = document.querySelector('.menu-burger');
+        const navMenu = document.querySelector('.nav');
+
+        burgerBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('nav--open');
+        });
+    </script>
 
 </body>
 
