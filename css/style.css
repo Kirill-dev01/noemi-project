@@ -120,6 +120,8 @@ p {
     padding-top: 30px;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .header::after {
@@ -199,8 +201,9 @@ p {
 
 .intro {
     text-align: center;
-    padding-top: 85px;
-    padding-bottom: 125px;
+    margin: auto;
+    /* Vertically center the title */
+    padding: 20px 0;
 }
 
 .intro-title {
@@ -855,6 +858,11 @@ p {
 
 
 @media (max-width: 640px) {
+    .header {
+        min-height: 100vh;
+        /* Make header full screen height */
+    }
+
     .header-container {
         justify-content: space-between;
         flex-direction: row-reverse;
@@ -865,12 +873,14 @@ p {
     .logo {
         position: absolute;
         left: 50%;
+        top: 220px;
+        /* Adjust vertical position */
         transform: translateX(-50%);
     }
 
     .intro {
-        padding-top: 100px;
-        padding-bottom: 40px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .intro-title {
