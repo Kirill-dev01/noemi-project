@@ -855,6 +855,19 @@ p {
 
 
 @media (max-width: 640px) {
+
+    /* --- ДОБАВЬТЕ ЭТОТ БЛОК --- */
+    .header {
+        min-height: 100vh;
+        /* Делает шапку во весь экран по высоте */
+        background-image: url('../images/banner-bg-mobile.jpg');
+        /* Меняет картинку на мобильную */
+        background-position: center center;
+        /* Центрирует человека на скале */
+    }
+
+    /* -------------------------- */
+
     .header-container {
         justify-content: space-between;
         flex-direction: row-reverse;
