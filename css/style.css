@@ -861,6 +861,8 @@ p {
     .header {
         min-height: 100vh;
         /* Make header full screen height */
+        background-image: url('../images/banner-bg-mobile.jpg');
+        /* Use mobile background */
     }
 
     .header-container {
@@ -874,7 +876,6 @@ p {
         position: absolute;
         left: 50%;
         top: 220px;
-        /* Adjust vertical position */
         transform: translateX(-50%);
     }
 
