@@ -781,39 +781,21 @@ p {
 /* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
 @media (max-width: 1200px) {
+
+    .header {
+        background-image: url('../images/banner-bg-tablet.jpg');
+    }
+
+    .intro-title {
+        font-size: 40px;
+    }
+
     .nav {
         display: none;
     }
 
     .menu-burger {
         display: block;
-    }
-
-    .nav--open {
-        display: block;
-        position: absolute;
-        top: 60px;
-        right: 15px;
-        width: 250px;
-        background-color: #fff;
-        z-index: 100;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .nav--open .nav-list {
-        flex-direction: column;
-    }
-
-    .nav--open .nav-item {
-        margin: 0;
-    }
-
-    .nav--open .nav-link {
-        display: block;
-        padding: 15px 20px;
-        text-align: left;
-        color: #000;
-        border-bottom: 1px solid #eee;
     }
 
     .content-wrapper {
@@ -831,11 +813,38 @@ p {
     }
 
     .products-grid {
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
-    .header {
-        background-image: url('../images/banner-bg-tablet.jpg');
+    .product-item {
+        width: calc(50% - 30px);
+        /* Два товара в ряд с отступом */
+    }
+
+    .product-item:last-child {
+        margin-top: 40px;
+    }
+
+}
+
+@media (min-width: 641px) and (max-width: 1200px) {
+    .trending-grid {
+        flex-wrap: wrap;
+    }
+
+    /* Планшет в горизонтальной ориентации: 4 в ряд */
+    @media (orientation: landscape) {
+        .trending-item {
+            width: calc(25% - 3px);
+        }
+    }
+
+    /* Планшет в вертикальной ориентации: 2x2 сетка */
+    @media (orientation: portrait) {
+        .trending-item {
+            width: calc(50% - 2px);
+        }
     }
 }
 
