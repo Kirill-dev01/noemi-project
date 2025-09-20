@@ -164,7 +164,8 @@ p {
 
 
 .menu-burger {
-    display: none; /* Скрыт по умолчанию */
+    display: none;
+    /* Скрыт по умолчанию */
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -173,14 +174,8 @@ p {
 }
 
 .menu-burger-icon {
-    display: block;
     width: 24px;
-    height: 18px;
-    background-color: #fff;
-    -webkit-mask-image: url('../images/burger_mobile.svg');
-    mask-image: url('../images/burger_mobile.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
+    /* Задаем размер иконки */
 }
 
 
