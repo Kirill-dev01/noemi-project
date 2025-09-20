@@ -797,91 +797,116 @@ p {
 /* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
 @media (max-width: 1200px) {
+    
     .nav {
-        display: none;
+        display: none; /* Hide the desktop nav by default on tablets/mobile */
     }
 
-    .menu-burger {
-        display: block;
-    }
-
+    /* THIS IS THE NEW/FIXED PART */
     .nav--open {
         display: block;
         position: absolute;
-        top: 60px;
-        right: 15px;
+        top: 60px; /* Adjust as needed to clear your header */
+        right: 15px; /* Position on the right */
         width: 250px;
         background-color: #fff;
         z-index: 100;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        padding: 10px 0;
     }
-
+    
     .nav--open .nav-list {
-        flex-direction: column;
+        flex-direction: column; /* Stack nav links vertically */
+        align-items: flex-start;
     }
-
+    
     .nav--open .nav-item {
+        width: 100%;
         margin: 0;
     }
-
+    
     .nav--open .nav-link {
-        display: block;
+        display: block; /* Make the whole area clickable */
+        width: 100%;
         padding: 15px 20px;
         text-align: left;
         color: #000;
         border-bottom: 1px solid #eee;
     }
+    /* END OF NEW/FIXED PART */
+
+    .menu-burger {
+        display: block; /* Show the burger icon */
+    }
+
+    .header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image: url('../images/banner-bg-tablet.jpg');
+    }
+    
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .intro { /* Changed from .header-content to match your HTML */
+        position: relative;
+        z-index: 2;
+    }
+
+
+    .trending-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .trending-item {
+        width: calc(50% - 10px);
+    }
 
     .content-wrapper {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
     }
 
     .articles {
-        width: 100%;
+        width: 65%;
         margin-right: 0;
     }
 
     .sidebar {
-        width: 100%;
-        margin-top: 40px;
+        width: 33%;
+        margin-top: 0;
     }
 
     .products-grid {
+        display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        gap: 40px 30px;
     }
 
     .product-item {
-        width: calc(50% - 30px);
+        width: calc(50% - 15px);
+        margin-top: 0;
     }
-
-    .product-item:last-child {
-        margin-top: 40px;
-    }
-
-    .header {
-        background-image: url('../images/banner-bg-tablet.jpg');
+    
+    .product-item:nth-child(odd):last-child {
+        width: 100%;
     }
 }
 
-@media (min-width: 641px) and (max-width: 1200px) {
-    .trending-grid {
-        flex-wrap: wrap;
-    }
-
-    /* Tablet Orientation Rules */
-    @media (orientation: landscape) {
-        .trending-item {
-            width: calc(25% - 3px);
-        }
-    }
-
-    @media (orientation: portrait) {
-        .trending-item {
-            width: calc(50% - 2px);
-        }
-    }
-}
 
 
 @media (max-width: 640px) {
