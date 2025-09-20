@@ -189,9 +189,15 @@ p {
     top: 25%;
 }
 
+.menu-burger-line:nth-child(2) {
+    /* ← Missing this! */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Centers the middle line vertically */
+}
+
 .menu-burger-line:nth-child(3) {
     top: 75%;
-    /* Точная позиция для нижней линии */
 }
 
 
