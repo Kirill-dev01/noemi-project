@@ -164,8 +164,6 @@ p {
 
 
 .menu-burger {
-    display: none;
-    /* Скрыт по умолчанию */
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -173,9 +171,46 @@ p {
     z-index: 3;
 }
 
+/* Show burger on mobile (default) */
+@media (max-width: 768px) {
+    .menu-burger {
+        display: block;
+    }
+}
+
+/* Hide burger on desktop */
+@media (min-width: 769px) {
+    .menu-burger {
+        display: none;
+    }
+}
+
 .menu-burger-icon {
+    display: block;
     width: 24px;
-    /* Задаем размер иконки */
+    height: 18px;
+
+    /* 1. Add a fallback for old browsers */
+    background-image: url('../images/burger_mobile.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 2. Use the modern mask technique ONLY if the browser supports it */
+@supports (mask-image: url('../images/burger_mobile.svg')) or (-webkit-mask-image: url('../images/burger_mobile.svg')) {
+    .menu-burger-icon {
+        /* This will override the background-image on modern browsers */
+        background-image: none;
+        /* Clear the fallback */
+        background-color: #fff;
+        /* Set the icon's color */
+        -webkit-mask-image: url('../images/burger_mobile.svg');
+        mask-image: url('../images/burger_mobile.svg');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+    }
 }
 
 
