@@ -190,12 +190,13 @@ p {
 }
 
 .menu-burger-line:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
+    top: 7px;
+    /* Точная позиция для средней линии */
 }
 
 .menu-burger-line:nth-child(3) {
-    bottom: 0;
+    top: 14px;
+    /* Точная позиция для нижней линии */
 }
 
 
