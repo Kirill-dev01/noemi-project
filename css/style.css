@@ -863,23 +863,34 @@ p {
         min-height: 100vh;
         background-image: url('../images/banner-mobile.jpg');
         background-position: center center;
+        padding-top: 30px;
+        /* Сохраняем верхний отступ */
+        display: block;
+        /* Сбрасываем flex-поведение */
     }
 
     .header-container {
-        justify-content: space-between;
+        justify-content: flex-end;
+        /* Прижимаем бургер вправо */
         flex-direction: row-reverse;
-        width: 100%;
-        padding: 0 15px;
+        position: relative;
+        /* Чтобы бургер был над логотипом */
+        z-index: 2;
     }
 
     .logo {
         position: absolute;
-        left: 50%;
         top: 220px;
+        /* Опускаем логотип от верхнего края */
+        left: 50%;
         transform: translateX(-50%);
+        z-index: 1;
+        /* Логотип под блоком с бургером */
     }
 
     .intro {
+        margin-top: 280px;
+        /* Отодвигаем заголовок вниз, под логотип */
         padding-top: 0;
         padding-bottom: 0;
     }
