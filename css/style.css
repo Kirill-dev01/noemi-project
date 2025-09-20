@@ -163,7 +163,9 @@ p {
 }
 
 .menu-burger {
-    display: none; /* Скрыт по умолчанию */
+    display: flex;
+    /* ← This overrides the "none" above */
+    /* display: none; ← Remove or comment this out */
     width: 24px;
     height: 18px;
     background-color: transparent;
@@ -171,9 +173,12 @@ p {
     cursor: pointer;
     padding: 0;
     z-index: 3;
-    display: flex; /* Используем Flexbox */
-    flex-direction: column; /* Располагаем линии в колонку */
-    justify-content: space-between; /* Распределяем пространство между линиями */
+    flex-direction: column;
+    /* Stack lines vertically */
+    justify-content: space-between;
+    /* Perfect spacing between lines */
+    position: relative;
+    /* Keep this for z-index context */
 }
 
 .menu-burger-line {
@@ -182,7 +187,6 @@ p {
     background-color: #fff;
     transition: all 0.3s ease;
 }
-
 
 .intro {
     text-align: center;
