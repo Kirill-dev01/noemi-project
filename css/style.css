@@ -164,39 +164,21 @@ p {
 
 
 .menu-burger {
-    display: none; /* Скрыт по умолчанию */
-    width: 24px;   /* Размер как в дизайне */
-    height: 18px;  /* Размер как в дизайне */
+    display: none;
+    /* Скрыт по умолчанию */
     background-color: transparent;
     border: none;
     cursor: pointer;
-    position: relative;
     padding: 0;
     z-index: 3;
 }
 
-.menu-burger-line {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;   /* Толщина как в дизайне */
-    background-color: #fff;
-    transition: all 0.3s ease;
+.menu-burger-icon {
+    width: 24px;
+    /* Задаем размер иконки */
 }
 
-/* Этот блок кода надежно располагает 3 линии */
-.menu-burger-line:nth-child(1) {
-    top: 0;
-}
 
-.menu-burger-line:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.menu-burger-line:nth-child(3) {
-    bottom: 0;
-}
 
 .intro {
     text-align: center;
@@ -781,21 +763,39 @@ p {
 /* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
 @media (max-width: 1200px) {
-
-    .header {
-        background-image: url('../images/banner-bg-tablet.jpg');
-    }
-
-    .intro-title {
-        font-size: 40px;
-    }
-
     .nav {
         display: none;
     }
 
     .menu-burger {
         display: block;
+    }
+
+    .nav--open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        width: 250px;
+        background-color: #fff;
+        z-index: 100;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav--open .nav-list {
+        flex-direction: column;
+    }
+
+    .nav--open .nav-item {
+        margin: 0;
+    }
+
+    .nav--open .nav-link {
+        display: block;
+        padding: 15px 20px;
+        text-align: left;
+        color: #000;
+        border-bottom: 1px solid #eee;
     }
 
     .content-wrapper {
@@ -819,32 +819,14 @@ p {
 
     .product-item {
         width: calc(50% - 30px);
-        /* Два товара в ряд с отступом */
     }
 
     .product-item:last-child {
         margin-top: 40px;
     }
 
-}
-
-@media (min-width: 641px) and (max-width: 1200px) {
-    .trending-grid {
-        flex-wrap: wrap;
-    }
-
-    /* Планшет в горизонтальной ориентации: 4 в ряд */
-    @media (orientation: landscape) {
-        .trending-item {
-            width: calc(25% - 3px);
-        }
-    }
-
-    /* Планшет в вертикальной ориентации: 2x2 сетка */
-    @media (orientation: portrait) {
-        .trending-item {
-            width: calc(50% - 2px);
-        }
+    .header {
+        background-image: url('../images/banner-bg-tablet.jpg');
     }
 }
 
@@ -873,15 +855,10 @@ p {
         min-height: 100vh;
         background-image: url('../images/banner-mobile.jpg');
         background-position: center center;
-        padding-top: 30px;
-        /* Сохраняем верхний отступ */
-        display: block;
-        /* Сбрасываем flex-поведение */
     }
 
     .header-container {
         justify-content: flex-end;
-        /* <-- ЭТО ПРАВИЛЬНОЕ РЕШЕНИЕ */
         width: 100%;
         padding: 0 15px;
         position: absolute;
@@ -894,16 +871,13 @@ p {
     .logo {
         position: absolute;
         top: 220px;
-        /* Опускаем логотип от верхнего края */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
-        /* Логотип под блоком с бургером */
     }
 
     .intro {
         margin-top: 280px;
-        /* Отодвигаем заголовок вниз, под логотип */
         padding-top: 0;
         padding-bottom: 0;
     }
@@ -920,6 +894,10 @@ p {
         width: 100%;
         margin-right: 0;
         margin-bottom: 15px;
+    }
+
+    .product-item {
+        width: 100%;
     }
 
     /* Mobile Orientation Rules */
