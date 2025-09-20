@@ -145,7 +145,6 @@ p {
 
 
 .nav-list {
-    padding: 1rem;
     display: flex;
 }
 
@@ -169,7 +168,10 @@ p {
     height: 50px;
     margin-left: auto;
     position: relative;
-    /* Keep this for z-index context */
+    display: flex; /* Add this for Flexbox approach */
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 0; /* Add small padding for spacing */
 }
 
 .menu-burger-line {
@@ -177,19 +179,8 @@ p {
     height: 5px;
     background-color: #fff;
     border-radius: 25px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     transition: .3s ease;
-}
-
-.menu-burger-line:nth-child(1) {
-    top: 25%;
-}
-
-.menu-burger-line:nth-child(3) {
-    top: 75%;
+    /* Remove conflicting positioning - let flex handle it */
 }
 
 .intro {
