@@ -168,10 +168,6 @@ p {
     height: 50px;
     margin-left: auto;
     position: relative;
-    display: flex; /* Add this for Flexbox approach */
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 5px 0; /* Add small padding for spacing */
 }
 
 .menu-burger-line {
@@ -179,8 +175,21 @@ p {
     height: 5px;
     background-color: #fff;
     border-radius: 25px;
+    position: absolute;
+    left: 0;
     transition: .3s ease;
-    /* Remove conflicting positioning - let flex handle it */
+}
+
+.menu-burger-line:nth-child(1) {
+    top: 12px; /* (50px - 15px lines - 10px spacing) / 2 */
+}
+
+.menu-burger-line:nth-child(2) {
+    top: 25px; /* Center */
+}
+
+.menu-burger-line:nth-child(3) {
+    top: 38px; /* Bottom */
 }
 
 .intro {
