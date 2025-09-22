@@ -921,17 +921,36 @@ p {
 
     /* 2. The Two-Column Grid Layout */
     .products-grid {
-        width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
 
-    /* 3. The Responsive Image Inside the Grid (USING THE CORRECT CLASS) */
+    /* 3. The Responsive Image Inside the Grid */
     .product-item .product-image {
         width: 100%;
         height: auto;
         display: block;
+    }
+
+    /* 4. (NEW!) Make Content Inside the Card Align Nicely */
+    .product-item {
+        display: flex;
+        /* Turns the card itself into a flex container */
+        flex-direction: column;
+        /* Stacks image and content vertically */
+    }
+
+    .product-content {
+        flex-grow: 1;
+        /* Allows the content area to grow and fill empty space */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-footer {
+        margin-top: auto;
+        /* This is the magic! Pushes the footer to the bottom */
     }
 }
 
