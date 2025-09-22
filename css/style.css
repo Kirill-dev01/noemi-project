@@ -894,6 +894,14 @@ p {
     .menu-burger {
         display: block; /* Show burger menu */
     }
+
+      /* Final Part: Two-column grid for the products section */
+   .products-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+        gap: 30px; /* Creates space between the product cards */
+   }
+    
 }
 
 /* =================================== */
