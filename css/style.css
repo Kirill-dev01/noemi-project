@@ -914,9 +914,14 @@ p {
     .products-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* Creates two equal-width columns */
         gap: 30px;
-        /* Creates space between the product cards */
+    }
+
+    /* This makes the image fill the grid column, fixing the "thin" look. */
+    .product-item img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
 }
