@@ -835,19 +835,13 @@ p {
 }
 
 
-/* == Tablet Styles (641px - 1200px) == */
-/* =================================== */
+/* == Tablet-Only Grid (641px - 1200px) == */
+/* ===================================== */
 @media (min-width: 641px) and (max-width: 1200px) {
   .trending-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* This helps align items */
-  }
-
-  .trending-item {
-    /* Each item takes up half the width, minus a small amount for the gap */
-    width: calc(50% - 10px); 
-    margin-bottom: 20px; /* This creates the vertical gap between rows */
+    display: grid; /* Defines the container as a grid */
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+    gap: 20px; /* Creates a 20px gap between rows and columns */
   }
 }
 
