@@ -927,8 +927,8 @@ p {
         gap: 30px;
     }
 
-    /* 3. The Responsive Image Inside the Grid */
-    .product-item img {
+    /* 3. The Responsive Image Inside the Grid (USING THE CORRECT CLASS) */
+    .product-item .product-image {
         width: 100%;
         height: auto;
         display: block;
