@@ -835,26 +835,20 @@ p {
 }
 
 
-/* =============================================== */
-/* == Specific Tablet Orientations (641px-1200px) == */
-/* =============================================== */
+/* == Tablet Styles (641px - 1200px) == */
+/* =================================== */
 @media (min-width: 641px) and (max-width: 1200px) {
   .trending-grid {
-    flex-wrap: wrap;
+    display: grid;
+    /* Create 2 columns of equal width */
+    grid-template-columns: repeat(2, 1fr); 
+    /* Create a 20px gap between columns and rows */
+    gap: 20px; 
   }
 
-  /* Tablet landscape: 4 items in a row */
-  @media (orientation: landscape) {
-    .trending-item {
-      width: calc(25% - 3px);
-    }
-  }
-
-  /* Tablet portrait: 2 items in a row */
-  @media (orientation: portrait) {
-    .trending-item {
-      width: calc(50% - 2px);
-    }
+  /* We don't even need to set a width on the items! Grid handles it. */
+  .trending-item {
+     width: 100%; /* Ensure item fills the grid cell */
   }
 }
 
