@@ -910,20 +910,29 @@ p {
         /* Show burger menu */
     }
 
-    /* Final Part: Two-column grid for the products section */
+    /* 1. The Centering Container */
+    .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* 2. The Two-Column Grid Layout */
     .products-grid {
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
 
-    /* This makes the image fill the grid column, fixing the "thin" look. */
+    /* 3. The Responsive Image Inside the Grid */
     .product-item img {
         width: 100%;
         height: auto;
         display: block;
     }
-
 }
 
 /* =================================== */
