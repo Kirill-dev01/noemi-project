@@ -25,11 +25,6 @@
                     <li class="nav-item"><a href="#0" class="nav-link" id="show-popup-btn">Контакты</a></li>
                 </ul>
             </nav>
-            <button class="menu-burger">
-                <span class="visually-hidden">Открыть меню</span>
-
-                <span class="menu-burger-icon" aria-hidden="true"></span>
-            </button>
         </div>
         <div class="intro">
             <h1 class="intro-title">Блог о творчестве, спорте, и образе жизни</h1>
@@ -406,13 +401,12 @@
     </div>
 
     <script>
-        // --- Pop-up Logic ---
         const popup = document.getElementById('feedback-popup');
         const showBtn = document.getElementById('show-popup-btn');
         const closeBtn = document.getElementById('close-popup-btn');
 
         function showPopup(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent link from navigating
             popup.style.display = 'flex';
         }
 
@@ -422,18 +416,12 @@
 
         showBtn.addEventListener('click', showPopup);
         closeBtn.addEventListener('click', hidePopup);
+
+        // Optional: Close popup when clicking on the overlay
         popup.addEventListener('click', function (event) {
             if (event.target === popup) {
                 hidePopup();
             }
-        });
-
-        // --- Burger Menu Logic ---
-        const burgerBtn = document.querySelector('.menu-burger');
-        const navMenu = document.querySelector('.nav');
-
-        burgerBtn.addEventListener('click', function () {
-            navMenu.classList.toggle('nav--open');
         });
     </script>
 
