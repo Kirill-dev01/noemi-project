@@ -785,163 +785,147 @@ p {
 
 /* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
+/* ============================================= */
+/* == Tablet & Small Desktop (1200px and down) == */
+/* ============================================= */
 @media (max-width: 1200px) {
+  .header {
+    background-image: url('../images/banner-bg-tablet.jpg');
+  }
 
-    .header {
-        background-image: url('../images/banner-bg-tablet.jpg');
-    }
+  .intro-title {
+    font-size: 40px;
+  }
 
-    .intro-title {
-        font-size: 40px;
-    }
+  .nav {
+    display: none;
+  }
 
-    .nav {
-        display: none;
-    }
+  .menu-burger {
+    display: block;
+  }
 
-    .menu-burger {
-        display: block;
-    }
+  .content-wrapper {
+    flex-direction: column;
+  }
 
-    .content-wrapper {
-        flex-direction: column;
-    }
+  .articles {
+    width: 100%;
+    margin-right: 0;
+  }
 
-    .articles {
-        width: 100%;
-        margin-right: 0;
-    }
+  .sidebar {
+    width: 100%;
+    margin-top: 40px;
+  }
 
-    .sidebar {
-        width: 100%;
-        margin-top: 40px;
-    }
+  .products-grid {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-    .products-grid {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .product-item {
-        width: calc(50% - 30px);
-        /* Два товара в ряд с отступом */
-    }
-
-    .product-item:last-child {
-        margin-top: 40px;
-    }
-
+  /*
+    FIX: Replaced flawed 'last-child' logic.
+    This now creates two products per row with a 40px gap between rows.
+  */
+  .product-item {
+    width: calc(50% - 20px); /* Adjust width for a consistent gap */
+    margin-bottom: 40px;
+  }
 }
 
+
+/* =============================================== */
+/* == Specific Tablet Orientations (641px-1200px) == */
+/* =============================================== */
 @media (min-width: 641px) and (max-width: 1200px) {
-    .trending-grid {
-        flex-wrap: wrap;
-    }
+  .trending-grid {
+    flex-wrap: wrap;
+  }
 
-    /* Планшет в горизонтальной ориентации: 4 в ряд */
-    @media (orientation: landscape) {
-        .trending-item {
-            width: calc(25% - 3px);
-        }
+  /* Tablet landscape: 4 items in a row */
+  @media (orientation: landscape) {
+    .trending-item {
+      width: calc(25% - 3px);
     }
+  }
 
-    /* Планшет в вертикальной ориентации: 2x2 сетка */
-    @media (orientation: portrait) {
-        .trending-item {
-            width: calc(50% - 2px);
-        }
+  /* Tablet portrait: 2 items in a row */
+  @media (orientation: portrait) {
+    .trending-item {
+      width: calc(50% - 2px);
     }
-}
-
-@media (min-width: 641px) and (max-width: 1200px) {
-    .trending-grid {
-        flex-wrap: wrap;
-    }
-
-    /* Tablet Orientation Rules */
-    @media (orientation: landscape) {
-        .trending-item {
-            width: calc(25% - 3px);
-        }
-    }
-
-    @media (orientation: portrait) {
-        .trending-item {
-            width: calc(50% - 2px);
-        }
-    }
+  }
 }
 
 
+/* =================================== */
+/* == Mobile Styles (640px and down) == */
+/* =================================== */
 @media (max-width: 640px) {
-    .header {
-        min-height: 100vh;
-        background-image: url('../images/banner-mobile.jpg');
-        background-position: center center;
-        padding-top: 30px;
-        /* Сохраняем верхний отступ */
-        display: block;
-        /* Сбрасываем flex-поведение */
-    }
+  .header {
+    min-height: 100vh;
+    background-image: url('../images/banner-mobile.jpg');
+    background-position: center center;
+    padding-top: 30px;
+    display: block; /* Reset flex behavior */
+  }
 
-    .header-container {
-        justify-content: flex-end;
-        /* <-- ЭТО ПРАВИЛЬНОЕ РЕШЕНИЕ */
-        width: 100%;
-        padding: 0 15px;
-        position: absolute;
-        top: 30px;
-        left: 0;
-        right: 0;
-        z-index: 2;
-    }
+  .header-container {
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 15px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
 
-    .logo {
-        position: absolute;
-        top: 220px;
-        /* Опускаем логотип от верхнего края */
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        /* Логотип под блоком с бургером */
-    }
+  .logo {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
 
-    .intro {
-        margin-top: 280px;
-        /* Отодвигаем заголовок вниз, под логотип */
-        padding-top: 0;
-        padding-bottom: 0;
-    }
+  .intro {
+    margin-top: 280px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
-    .intro-title {
-        font-size: 28px;
-    }
+  .intro-title {
+    font-size: 28px;
+  }
 
-    .article {
-        flex-direction: column;
-    }
+  .article {
+    flex-direction: column;
+  }
 
-    .article-image-container {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
+  .article-image-container {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 
-    /* Mobile Orientation Rules */
-    .trending-grid {
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
+  /* Mobile Orientation Rules */
+  .trending-grid {
+    flex-wrap: wrap;
+  }
 
-    @media (orientation: landscape) {
-        .trending-item {
-            width: calc(50% - 2px);
-        }
+  /* Mobile landscape: 2 items in a row */
+  @media (orientation: landscape) {
+    .trending-item {
+      width: calc(50% - 2px);
     }
+  }
 
-    @media (orientation: portrait) {
-        .trending-item {
-            width: 100%;
-        }
+  /* Mobile portrait: 1 full-width item per row */
+  @media (orientation: portrait) {
+    .trending-item {
+      width: 100%;
     }
+  }
 }
