@@ -162,58 +162,6 @@ p {
     text-decoration: underline;
 }
 
-
-.menu-burger {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 3;
-}
-
-/* Show burger on mobile (default) */
-@media (max-width: 768px) {
-    .menu-burger {
-        display: block;
-    }
-}
-
-/* Hide burger on desktop */
-@media (min-width: 769px) {
-    .menu-burger {
-        display: none;
-    }
-}
-
-.menu-burger-icon {
-    display: block;
-    width: 24px;
-    height: 18px;
-
-    /* 1. Add a fallback for old browsers */
-    background-image: url('../images/burger_mobile.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* 2. Use the modern mask technique ONLY if the browser supports it */
-@supports (mask-image: url('../images/burger_mobile.svg')) or (-webkit-mask-image: url('../images/burger_mobile.svg')) {
-    .menu-burger-icon {
-        /* This will override the background-image on modern browsers */
-        background-image: none;
-        /* Clear the fallback */
-        background-color: #fff;
-        /* Set the icon's color */
-        -webkit-mask-image: url('../images/burger_mobile.svg');
-        mask-image: url('../images/burger_mobile.svg');
-        mask-size: contain;
-        mask-repeat: no-repeat;
-        mask-position: center;
-    }
-}
-
-
 .intro {
     text-align: center;
     padding-top: 85px;
@@ -797,152 +745,74 @@ p {
 /* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
 @media (max-width: 1200px) {
-    
-    .nav {
-        display: none; /* Hide the desktop nav by default on tablets/mobile */
-    }
-
-    /* THIS IS THE NEW/FIXED PART */
-    .nav--open {
-        display: block;
-        position: absolute;
-        top: 60px; /* Adjust as needed to clear your header */
-        right: 15px; /* Position on the right */
-        width: 250px;
-        background-color: #fff;
-        z-index: 100;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-        padding: 10px 0;
-    }
-    
-    .nav--open .nav-list {
-        flex-direction: column; /* Stack nav links vertically */
-        align-items: flex-start;
-    }
-    
-    .nav--open .nav-item {
-        width: 100%;
-        margin: 0;
-    }
-    
-    .nav--open .nav-link {
-        display: block; /* Make the whole area clickable */
-        width: 100%;
-        padding: 15px 20px;
-        text-align: left;
-        color: #000;
-        border-bottom: 1px solid #eee;
-    }
-    /* END OF NEW/FIXED PART */
-
-    .menu-burger {
-        display: block; /* Show the burger icon */
-    }
-
-    .header {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background-image: url('../images/banner-bg-tablet.jpg');
-    }
-    
-    .header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
-
-    .intro { /* Changed from .header-content to match your HTML */
-        position: relative;
-        z-index: 2;
-    }
-
-
-    .trending-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .trending-item {
-        width: calc(50% - 10px);
-    }
-
     .content-wrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
+        flex-direction: column;
     }
 
     .articles {
-        width: 65%;
+        width: 100%;
         margin-right: 0;
     }
 
     .sidebar {
-        width: 33%;
-        margin-top: 0;
+        width: 100%;
+        margin-top: 40px;
     }
 
     .products-grid {
-        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1200px) {
+    .trending-grid {
         flex-wrap: wrap;
-        gap: 40px 30px;
     }
 
-    .product-item {
-        width: calc(50% - 15px);
-        margin-top: 0;
+    .trending-item {
+        width: calc(50% - 2px);
     }
-    
-    .product-item:nth-child(odd):last-child {
-        width: 100%;
+
+    /* Tablet Orientation Rules */
+    @media (orientation: landscape) {
+        .trending-item {
+            width: calc(25% - 3px);
+        }
+    }
+
+    @media (orientation: portrait) {
+        .trending-item {
+            width: calc(50% - 2px);
+        }
     }
 }
 
 
-
 @media (max-width: 640px) {
-    .header {
-        min-height: 100vh;
-        background-image: url('../images/banner-mobile.jpg');
-        background-position: center center;
-    }
-
     .header-container {
-        justify-content: flex-end;
-        width: 100%;
-        padding: 0 15px;
-        position: absolute;
-        top: 30px;
-        left: 0;
-        right: 0;
-        z-index: 2;
+        flex-direction: column;
     }
 
-    .logo {
-        position: absolute;
-        top: 220px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
+    .nav {
+        margin-top: 20px;
     }
 
-    .intro {
-        margin-top: 280px;
-        padding-top: 0;
-        padding-bottom: 0;
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin-left: 0;
+        margin-bottom: 10px;
     }
 
     .intro-title {
         font-size: 28px;
+    }
+
+    .trending-grid {
+        flex-direction: column;
     }
 
     .article {
@@ -953,10 +823,6 @@ p {
         width: 100%;
         margin-right: 0;
         margin-bottom: 15px;
-    }
-
-    .product-item {
-        width: 100%;
     }
 
     /* Mobile Orientation Rules */
