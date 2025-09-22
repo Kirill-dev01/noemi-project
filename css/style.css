@@ -839,16 +839,15 @@ p {
 /* =================================== */
 @media (min-width: 641px) and (max-width: 1200px) {
   .trending-grid {
-    display: grid;
-    /* Create 2 columns of equal width */
-    grid-template-columns: repeat(2, 1fr); 
-    /* Create a 20px gap between columns and rows */
-    gap: 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* This helps align items */
   }
 
-  /* We don't even need to set a width on the items! Grid handles it. */
   .trending-item {
-     width: 100%; /* Ensure item fills the grid cell */
+    /* Each item takes up half the width, minus a small amount for the gap */
+    width: calc(50% - 10px); 
+    margin-bottom: 20px; /* This creates the vertical gap between rows */
   }
 }
 
