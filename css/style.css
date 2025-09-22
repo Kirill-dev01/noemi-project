@@ -835,16 +835,66 @@ p {
 }
 
 
-/* == Tablet-Only Grid (641px - 1200px) == */
+/* == Tablet Layout (641px - 1200px) == */
 /* ===================================== */
 @media (min-width: 641px) and (max-width: 1200px) {
-  .trending-grid {
-    display: grid; /* Defines the container as a grid */
-    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
-    gap: 20px; /* Creates a 20px gap between rows and columns */
-  }
-}
 
+    /* Override the general max-width:1200px flex-direction: column for content-wrapper */
+    /* This makes the articles and sidebar sit side-by-side again */
+    .content-wrapper {
+        flex-direction: row; /* Articles and sidebar next to each other */
+        justify-content: space-between; /* Pushes them to the edges if needed */
+        gap: 40px; /* Adds space between the main content and the sidebar */
+    }
+
+    /* Adjust widths for the main article content area */
+    .articles {
+        width: 65%; /* Articles take up 65% of the content-wrapper */
+        margin-right: 0; /* Remove any previous right margin */
+    }
+
+    /* Adjust widths for the sidebar content area */
+    .sidebar {
+        width: 30%; /* Sidebar takes up 30% of the content-wrapper */
+        margin-top: 0; /* Remove any previous top margin */
+    }
+
+    /* Keep the trending grid 2x2 for tablets */
+    .trending-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Ensure article images take full width of their container */
+    /* This assumes you have a .article class for your main blog posts */
+    .article-image-container { /* Adjust this selector if your main article image wrapper has a different class */
+        width: 100%;
+        margin-bottom: 20px; /* Add space below the image and before the text */
+    }
+
+    /* Ensure the main article content (text) flows below the image */
+    .article { /* Assuming .article is the flex container for image and text */
+        flex-direction: column; /* Stacks image above text */
+    }
+
+    /* --- Add any other specific tablet adjustments here --- */
+    .header {
+        background-image: url('../images/banner-bg-tablet.jpg'); /* Ensure tablet banner image is correct */
+    }
+
+    .intro-title {
+        font-size: 40px; /* As per your previous tablet styles */
+    }
+
+    .nav {
+        display: none; /* Hide desktop nav */
+    }
+
+    .menu-burger {
+        display: block; /* Show burger menu */
+    }
+}
 
 /* =================================== */
 /* == Mobile Styles (640px and down) == */
