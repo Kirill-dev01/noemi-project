@@ -957,7 +957,8 @@ p {
 /* == Mobile Styles (640px and down) == */
 /* =================================== */
 @media (max-width: 640px) {
-    /* --- Your existing mobile styles --- */
+
+    /* --- Your existing mobile layout styles (KEEP THESE) --- */
     .header {
         min-height: 100vh;
         background-image: url('../images/banner-mobile.jpg');
@@ -965,6 +966,7 @@ p {
         padding-top: 30px;
         display: block;
     }
+
     .header-container {
         justify-content: flex-end;
         width: 100%;
@@ -973,8 +975,10 @@ p {
         top: 30px;
         left: 0;
         right: 0;
-        z-index: 2;
+        z-index: 100;
+        /* <--- INCREASED Z-INDEX TO FIX BUG */
     }
+
     .logo {
         position: absolute;
         top: 220px;
@@ -982,79 +986,79 @@ p {
         transform: translateX(-50%);
         z-index: 1;
     }
+
     .intro {
         margin-top: 280px;
         padding-top: 0;
         padding-bottom: 0;
     }
+
     .intro-title {
         font-size: 28px;
     }
+
     .article {
         flex-direction: column;
     }
+
     .article-image-container {
         width: 100%;
         margin-right: 0;
         margin-bottom: 15px;
     }
+
     .trending-grid {
         flex-wrap: wrap;
     }
+
     @media (orientation: landscape) {
         .trending-item {
             width: calc(50% - 2px);
         }
     }
+
     @media (orientation: portrait) {
         .trending-item {
             width: 100%;
         }
     }
 
-    /* --- Burger Button & Menu Styles (REPLACE OLD CODE WITH THIS) --- */
+    /* --- FINAL MENU STYLES (UPDATED & SMALLER) --- */
     .nav {
         display: none;
     }
-
     .menu-burger {
         display: block;
         position: relative;
         z-index: 1000;
     }
-
     .nav--open {
         display: block;
         position: absolute;
         top: 50px;
         left: 50%;
-        transform: translateX(-50%);
-        /* Centers the menu */
-        width: 150px;
+        transform: translateX(-50%); /* Centers the menu */
+        width: 150px; /* <--- Made smaller */
         background-color: #fff;
-        padding: 5px 0;
+        padding: 5px 0; /* <--- Made smaller */
         border: 1px solid #ddd;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         z-index: 999;
     }
-
     .nav--open .nav-list {
         flex-direction: column;
     }
-
     .nav--open .nav-item {
         margin: 0;
         width: 100%;
     }
-
     .nav--open .nav-link {
         display: block;
-        font-size: 13px;
+        font-size: 13px; /* <--- Made smaller */
         color: #000;
-        padding: 10px 15px;
+        padding: 10px 15px; /* <--- Made smaller */
         text-align: center;
     }
-
     .nav--open .nav-link:hover {
         background-color: #f5f5f5;
     }
