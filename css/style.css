@@ -162,20 +162,43 @@ p {
     text-decoration: underline;
 }
 
-
 .menu-burger {
     display: none;
     /* Скрыт по умолчанию */
+    width: 24px;
+    /* Размер как в дизайне */
+    height: 18px;
+    /* Размер как в дизайне */
     background-color: transparent;
     border: none;
     cursor: pointer;
+    position: relative;
     padding: 0;
     z-index: 3;
 }
 
-.menu-burger-icon {
-    width: 24px;
-    /* Задаем размер иконки */
+.menu-burger-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* Толщина как в дизайне */
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Этот блок кода надежно располагает 3 линии */
+.menu-burger-line:nth-child(1) {
+    top: 0;
+}
+
+.menu-burger-line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-burger-line:nth-child(3) {
+    bottom: 0;
 }
 
 
