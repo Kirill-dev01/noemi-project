@@ -835,32 +835,37 @@ p {
 
     .nav--open {
         display: flex;
-        /* Change display from 'none' to 'flex' to show the menu */
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: absolute;
+
+        /* Make it a full-screen overlay */
+        position: fixed;
+        /* Fixed, so it covers the whole viewport */
         top: 0;
         left: 0;
         width: 100%;
-        height: 250px;
-        /* Or a height that you prefer */
-        background-color: #333;
-        /* A background to see it clearly */
-        z-index: 2;
-        /* Puts the menu above other content */
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        /* A semi-transparent black background */
+
+        /* Ensure it's on top of everything */
+        z-index: 999;
     }
 
-    /* You should also style the list items for a vertical layout */
+    /* Make the links bigger and white */
+    .nav--open .nav-link {
+        font-size: 20px;
+        color: #fff;
+    }
+
     .nav--open .nav-list {
         flex-direction: column;
     }
 
     .nav--open .nav-item {
-        margin: 15px 0;
-        /* Adds vertical spacing between items */
+        margin: 20px 0;
         margin-left: 0;
-        /* Resets the horizontal margin */
     }
 }
 
@@ -868,61 +873,73 @@ p {
 /* == Tablet Layout (641px - 1200px) == */
 /* ===================================== */
 @media (min-width: 641px) and (max-width: 1200px) {
-
-    /* Override the general max-width:1200px flex-direction: column for content-wrapper */
-    /* This makes the articles and sidebar sit side-by-side again */
+    /* --- Your existing tablet styles --- */
     .content-wrapper {
-        flex-direction: row; /* Articles and sidebar next to each other */
-        justify-content: space-between; /* Pushes them to the edges if needed */
-        gap: 40px; /* Adds space between the main content and the sidebar */
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
     }
-
-    /* Adjust widths for the main article content area */
     .articles {
-        width: 65%; /* Articles take up 65% of the content-wrapper */
-        margin-right: 0; /* Remove any previous right margin */
+        width: 65%;
+        margin-right: 0;
     }
-
-    /* Adjust widths for the sidebar content area */
     .sidebar {
-        width: 30%; /* Sidebar takes up 30% of the content-wrapper */
-        margin-top: 0; /* Remove any previous top margin */
+        width: 30%;
+        margin-top: 0;
     }
-
-    /* Keep the trending grid 2x2 for tablets */
     .trending-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-
-    /* Ensure article images take full width of their container */
-    /* This assumes you have a .article class for your main blog posts */
-    .article-image-container { /* Adjust this selector if your main article image wrapper has a different class */
+    .article-image-container {
         width: 100%;
-        margin-bottom: 20px; /* Add space below the image and before the text */
+        margin-bottom: 20px;
     }
-
-    /* Ensure the main article content (text) flows below the image */
-    .article { /* Assuming .article is the flex container for image and text */
-        flex-direction: column; /* Stacks image above text */
+    .article {
+        flex-direction: column;
     }
-
-    /* --- Add any other specific tablet adjustments here --- */
     .header {
-        background-image: url('../images/banner-bg-tablet.jpg'); /* Ensure tablet banner image is correct */
+        background-image: url('../images/banner-bg-tablet.jpg');
     }
-
     .intro-title {
-        font-size: 40px; /* As per your previous tablet styles */
+        font-size: 40px;
     }
-
     .nav {
-        display: none; /* Hide desktop nav */
+        display: none;
     }
 
+    /* --- UPDATED BURGER BUTTON --- */
     .menu-burger {
-        display: block; /* Show burger menu */
+        display: block;
+        position: relative; /* Added for z-index */
+        z-index: 1000;      /* Added to keep it above the overlay */
+    }
+
+    /* --- ADDED OVERLAY MENU STYLES --- */
+    .nav--open {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed; /* Covers the entire screen */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 999; /* Sits below the burger button but above all other content */
+    }
+    .nav--open .nav-list {
+        flex-direction: column;
+    }
+    .nav--open .nav-item {
+        margin: 20px 0;
+        margin-left: 0;
+    }
+    .nav--open .nav-link {
+        font-size: 20px;
+        color: #fff;
     }
 }
 
@@ -930,69 +947,92 @@ p {
 /* == Mobile Styles (640px and down) == */
 /* =================================== */
 @media (max-width: 640px) {
-  .header {
-    min-height: 100vh;
-    background-image: url('../images/banner-mobile.jpg');
-    background-position: center center;
-    padding-top: 30px;
-    display: block; /* Reset flex behavior */
-  }
-
-  .header-container {
-    justify-content: flex-end;
-    width: 100%;
-    padding: 0 15px;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    right: 0;
-    z-index: 2;
-  }
-
-  .logo {
-    position: absolute;
-    top: 220px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-
-  .intro {
-    margin-top: 280px;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .intro-title {
-    font-size: 28px;
-  }
-
-  .article {
-    flex-direction: column;
-  }
-
-  .article-image-container {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-
-  /* Mobile Orientation Rules */
-  .trending-grid {
-    flex-wrap: wrap;
-  }
-
-  /* Mobile landscape: 2 items in a row */
-  @media (orientation: landscape) {
-    .trending-item {
-      width: calc(50% - 2px);
+    /* --- Your existing mobile styles --- */
+    .header {
+        min-height: 100vh;
+        background-image: url('../images/banner-mobile.jpg');
+        background-position: center center;
+        padding-top: 30px;
+        display: block;
     }
-  }
-
-  /* Mobile portrait: 1 full-width item per row */
-  @media (orientation: portrait) {
-    .trending-item {
-      width: 100%;
+    .header-container {
+        justify-content: flex-end;
+        width: 100%;
+        padding: 0 15px;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        z-index: 2;
     }
-  }
+    .logo {
+        position: absolute;
+        top: 220px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+    .intro {
+        margin-top: 280px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .intro-title {
+        font-size: 28px;
+    }
+    .article {
+        flex-direction: column;
+    }
+    .article-image-container {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .trending-grid {
+        flex-wrap: wrap;
+    }
+    @media (orientation: landscape) {
+        .trending-item {
+            width: calc(50% - 2px);
+        }
+    }
+    @media (orientation: portrait) {
+        .trending-item {
+            width: 100%;
+        }
+    }
+
+    /* --- ADDED/UPDATED FOR MOBILE --- */
+    .nav {
+        display: none; /* Explicitly hide nav on mobile */
+    }
+    .menu-burger {
+        display: block;      /* Explicitly show burger on mobile */
+        position: relative;
+        z-index: 1000;
+    }
+    .nav--open {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 999;
+    }
+    .nav--open .nav-list {
+        flex-direction: column;
+    }
+    .nav--open .nav-item {
+        margin: 20px 0;
+        margin-left: 0;
+    }
+    .nav--open .nav-link {
+        font-size: 20px;
+        color: #fff;
+    }
 }
