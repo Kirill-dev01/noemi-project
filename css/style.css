@@ -909,7 +909,18 @@ p {
         display: block;
         /* Show burger menu */
     }
+    
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
 
+    .product-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
 /* =================================== */
 /* == Mobile Styles (640px and down) == */
