@@ -782,178 +782,377 @@ p {
     background-image: radial-gradient(#b59f5b 50%, transparent 55%);
 }
 
-/* ============================================= */
-/* == Global & Reset Styles (Apply to all) == */
-/* ============================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
 /* ============================================= */
-/* == Mobile-First Styles (Default for all sizes) == */
+/* == Tablet & Small Desktop (1200px and down) == */
 /* ============================================= */
+@media (max-width: 1200px) {
+    .header {
+        background-image: url('../images/banner-bg-tablet.jpg');
+    }
 
-/* Hide nav by default for mobile */
-.nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    max-width: 320px;
-    height: 100%;
-    background-color: #fff;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 999;
-}
+    .intro-title {
+        font-size: 40px;
+    }
 
-/* Style the open menu */
-.nav--open {
-    display: block;
-    transform: translateX(0);
-}
-
-/* Backdrop for open menu */
-.nav--open::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-}
-
-/* Menu list styling for the mobile menu */
-.nav-list {
-    flex-direction: column;
-    list-style: none;
-    padding: 20px 0;
-}
-
-/* Menu item styling for mobile */
-.nav-item {
-    margin: 0;
-    width: 100%;
-}
-
-/* Menu link styling for mobile */
-.nav-link {
-    display: block;
-    font-size: 18px;
-    color: #333;
-    padding: 15px 20px;
-    text-align: left;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-/* Hover and active states */
-.nav-link:hover,
-.nav-link:active {
-    background-color: #f0f4f8;
-}
-
-/* Burger icon styling */
-.menu-burger {
-    display: block;
-    position: relative;
-    width: 32px;
-    height: 24px;
-    cursor: pointer;
-    z-index: 1000;
-    margin: 15px;
-}
-
-/* Burger icon lines */
-.menu-burger span,
-.menu-burger span::before,
-.menu-burger span::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    background-color: #333;
-    transition: all 0.3s ease;
-}
-
-.menu-burger span {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.menu-burger span::before {
-    top: -10px;
-}
-
-.menu-burger span::after {
-    top: 10px;
-}
-
-/* Transform burger into 'X' when menu is open */
-.nav--open + .menu-burger span {
-    background: transparent;
-}
-
-.nav--open + .menu-burger span::before {
-    transform: rotate(45deg) translate(7px, 7px);
-}
-
-.nav--open + .menu-burger span::after {
-    transform: rotate(-45deg) translate(7px, -7px);
-}
-
-
-/* ============================================= */
-/* == Tablet & Desktop Styles (641px and up) == */
-/* ============================================= */
-@media (min-width: 641px) {
-    /* Hide the burger menu */
-    .menu-burger {
+    .nav {
         display: none;
     }
 
-    /* Make the navigation bar a permanent, horizontal menu */
-    .nav {
+    .menu-burger {
         display: block;
-        position: static;
-        width: auto;
-        height: auto;
-        transform: none;
-        background: none;
     }
 
-    /* Ensure .nav--open doesn't override desktop styles */
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .articles {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .products-grid {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /*
+    FIX: Replaced flawed 'last-child' logic.
+    This now creates two products per row with a 40px gap between rows.
+  */
+    .product-item {
+        width: calc(50% - 20px);
+        /* Adjust width for a consistent gap */
+        margin-bottom: 40px;
+    }
+
+    .nav--open {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /* Make it a full-screen overlay */
+        position: fixed;
+        /* Fixed, so it covers the whole viewport */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        /* A semi-transparent black background */
+
+        /* Ensure it's on top of everything */
+        z-index: 999;
+    }
+
+    /* Make the links bigger and white */
+    .nav--open .nav-link {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .nav--open .nav-list {
+        flex-direction: column;
+    }
+
+    .nav--open .nav-item {
+        margin: 20px 0;
+        margin-left: 0;
+    }
+}
+
+
+/* == Tablet Layout (641px - 1200px) == */
+/* ===================================== */
+@media (min-width: 641px) and (max-width: 1200px) {
+
+    /* --- Your existing tablet styles --- */
+    .content-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .articles {
+        width: 65%;
+        margin-right: 0;
+    }
+
+    .sidebar {
+        width: 30%;
+        margin-top: 0;
+    }
+
+    .trending-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .article-image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .article {
+        flex-direction: column;
+    }
+
+    .header {
+        background-image: url('../images/banner-bg-tablet.jpg');
+    }
+
+    .intro-title {
+        font-size: 40px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    /* --- UPDATED BURGER BUTTON --- */
+    .menu-burger {
+        display: block;
+        position: relative;
+        /* Added for z-index */
+        z-index: 1000;
+        /* Added to keep it above the overlay */
+    }
+
     .nav--open {
         display: block;
-        transform: none;
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Centers the menu */
+        width: 150px;
+        background-color: #fff;
+        padding: 5px 0;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 999;
     }
 
-    /* Hide the mobile backdrop on larger screens */
-    .nav--open::before {
-        display: none;
+    .nav--open .nav-list {
+        flex-direction: column;
     }
 
-    /* Arrange the links in a horizontal row */
-    .nav-list {
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        padding: 0;
+    .nav--open .nav-item {
+        margin: 0;
+        width: 100%;
     }
 
-    /* Adjust spacing for desktop links */
-    .nav-item {
-        margin: 0 10px;
-    }
-
-    /* Adjust link font size and padding for desktop */
-    .nav-link {
-        font-size: 16px;
+    .nav--open .nav-link {
+        display: block;
+        font-size: 13px;
+        color: #000;
         padding: 10px 15px;
+        text-align: center;
+    }
+
+    .nav--open .nav-link:hover {
+        background-color: #f5f5f5;
     }
 }
+
+/* =================================== */
+/* == Mobile Styles (640px and down) == */
+/* =================================== */
+@media (max-width: 640px) {
+
+    /* --- Your existing mobile layout styles (KEEP THESE) --- */
+    .header {
+        min-height: 100vh;
+        background-image: url('../images/banner-mobile.jpg');
+        background-position: center center;
+        padding-top: 30px;
+        display: block;
+    }
+
+    .header-container {
+        justify-content: flex-end;
+        width: 100%;
+        padding: 0 15px;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        /* <--- INCREASED Z-INDEX TO FIX BUG */
+    }
+
+    .logo {
+        position: absolute;
+        top: 220px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    .intro {
+        margin-top: 280px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .intro-title {
+        font-size: 28px;
+    }
+
+    .article {
+        flex-direction: column;
+    }
+
+    .article-image-container {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .trending-grid {
+        flex-wrap: wrap;
+    }
+
+    @media (orientation: landscape) {
+        .trending-item {
+            width: calc(50% - 2px);
+        }
+    }
+
+    @media (orientation: portrait) {
+        .trending-item {
+            width: 100%;
+        }
+    }
+
+    /* --- FINAL MENU STYLES (UPDATED & SMALLER) --- */
+    /* Reset default margins and ensure box-sizing */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Hide nav by default for mobile */
+    .nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        max-width: 320px;
+        height: 100%;
+        background-color: #fff;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    /* Style the open menu */
+    .nav--open {
+        display: block;
+        transform: translateX(0);
+    }
+
+    /* Backdrop for open menu */
+    .nav--open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    /* Menu list styling */
+    .nav--open .nav-list {
+        flex-direction: column;
+        list-style: none;
+        padding: 20px 0;
+    }
+
+    /* Menu item styling */
+    .nav--open .nav-item {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Menu link styling */
+    .nav--open .nav-link {
+        display: block;
+        font-size: 18px;
+        /* Larger for readability */
+        color: #333;
+        padding: 15px 20px;
+        /* Larger touch targets */
+        text-align: left;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    /* Hover and active states */
+    .nav--open .nav-link:hover,
+    .nav--open .nav-link:active {
+        background-color: #f0f4f8;
+        /* Modern hover/tap effect */
+    }
+
+    /* Burger icon styling */
+    .menu-burger {
+        display: block;
+        position: relative;
+        width: 32px;
+        height: 24px;
+        cursor: pointer;
+        z-index: 1000;
+        margin: 15px;
+    }
+
+    /* Burger icon lines */
+    .menu-burger span,
+    .menu-burger span::before,
+    .menu-burger span::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: #333;
+        transition: all 0.3s ease;
+    }
+
+    .menu-burger span {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .menu-burger span::before {
+        top: -10px;
+    }
+
+    .menu-burger span::after {
+        top: 10px;
+    }
+
+    /* Transform burger into 'X' when menu is open */
+    .nav--open+.menu-burger span {
+        background: transparent;
+    }
+
+    .nav--open+.menu-burger span::before {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .nav--open+.menu-burger span::after {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
