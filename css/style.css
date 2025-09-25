@@ -1143,24 +1143,3 @@ p {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Media query for larger screens */
-@media (min-width: 1024px) {
-    .menu-burger {
-        display: none;
-    }
-    .nav {
-        display: block;
-        position: static;
-        width: auto;
-        height: auto;
-        transform: none;
-        background: none;
-    }
-    .nav-list {
-        display: flex;
-        flex-direction: row;
-    }
-    .nav-link {
-        padding: 10px 15px;
-    }
-}
