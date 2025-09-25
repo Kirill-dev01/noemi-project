@@ -1024,42 +1024,143 @@ p {
     }
 
     /* --- FINAL MENU STYLES (UPDATED & SMALLER) --- */
-    .nav {
+/* Reset default margins and ensure box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hide nav by default for mobile */
+.nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+}
+
+/* Style the open menu */
+.nav--open {
+    display: block;
+    transform: translateX(0);
+}
+
+/* Backdrop for open menu */
+.nav--open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Menu list styling */
+.nav--open .nav-list {
+    flex-direction: column;
+    list-style: none;
+    padding: 20px 0;
+}
+
+/* Menu item styling */
+.nav--open .nav-item {
+    margin: 0;
+    width: 100%;
+}
+
+/* Menu link styling */
+.nav--open .nav-link {
+    display: block;
+    font-size: 18px; /* Larger for readability */
+    color: #333;
+    padding: 15px 20px; /* Larger touch targets */
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover and active states */
+.nav--open .nav-link:hover,
+.nav--open .nav-link:active {
+    background-color: #f0f4f8; /* Modern hover/tap effect */
+}
+
+/* Burger icon styling */
+.menu-burger {
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    margin: 15px;
+}
+
+/* Burger icon lines */
+.menu-burger span,
+.menu-burger span::before,
+.menu-burger span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+.menu-burger span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-burger span::before {
+    top: -10px;
+}
+
+.menu-burger span::after {
+    top: 10px;
+}
+
+/* Transform burger into 'X' when menu is open */
+.nav--open + .menu-burger span {
+    background: transparent;
+}
+
+.nav--open + .menu-burger span::before {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.nav--open + .menu-burger span::after {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .menu-burger {
         display: none;
     }
-    .menu-burger {
+    .nav {
         display: block;
-        position: relative;
-        z-index: 1000;
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none;
+        background: none;
     }
-    .nav--open {
-        display: block;
-        position: absolute;
-        top: 50px;
-        left: 50%;
-        transform: translateX(-50%); /* Centers the menu */
-        width: 150px; /* <--- Made smaller */
-        background-color: #fff;
-        padding: 5px 0; /* <--- Made smaller */
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        z-index: 999;
+    .nav-list {
+        display: flex;
+        flex-direction: row;
     }
-    .nav--open .nav-list {
-        flex-direction: column;
-    }
-    .nav--open .nav-item {
-        margin: 0;
-        width: 100%;
-    }
-    .nav--open .nav-link {
-        display: block;
-        font-size: 13px; /* <--- Made smaller */
-        color: #000;
-        padding: 10px 15px; /* <--- Made smaller */
-        text-align: center;
-    }
-    .nav--open .nav-link:hover {
-        background-color: #f5f5f5;
+    .nav-link {
+        padding: 10px 15px;
     }
 }
