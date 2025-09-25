@@ -782,11 +782,9 @@ p {
     background-image: radial-gradient(#b59f5b 50%, transparent 55%);
 }
 
-/* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
 
-/* ============================================= */
 /* == Tablet & Small Desktop (1200px and down) == */
-/* ============================================= */
+
 @media (max-width: 1200px) {
     .header {
         background-image: url('../images/banner-bg-tablet.jpg');
@@ -871,7 +869,7 @@ p {
 
 
 /* == Tablet Layout (641px - 1200px) == */
-/* ===================================== */
+
 @media (min-width: 641px) and (max-width: 1200px) {
 
     /* --- Your existing tablet styles --- */
@@ -918,7 +916,7 @@ p {
         display: none;
     }
 
-    /* --- UPDATED BURGER BUTTON --- */
+  
     .menu-burger {
         display: block;
         position: relative;
@@ -964,9 +962,9 @@ p {
     }
 }
 
-/* =================================== */
+
 /* == Mobile Styles (640px and down) == */
-/* =================================== */
+
 @media (max-width: 640px) {
 
     /* --- Your existing mobile layout styles (KEEP THESE) --- */
@@ -1033,9 +1031,6 @@ p {
             width: 100%;
         }
     }
-
-    /* --- FINAL MENU STYLES (UPDATED & SMALLER) --- */
-    /* Reset default margins and ensure box-sizing */
     
     .nav {
         display: none;
