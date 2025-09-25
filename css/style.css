@@ -1,6 +1,3 @@
-/* --- LOCAL FONT DEFINITIONS --- */
-
-/* Oswald Font Files */
 @font-face {
     font-family: 'Oswald';
     src: url('../fonts/Oswald-Regular.ttf') format('truetype');
@@ -17,7 +14,6 @@
     font-style: normal;
 }
 
-/* Open Sans Font Files */
 @font-face {
     font-family: 'Open Sans';
     src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
@@ -821,13 +817,9 @@ p {
         justify-content: space-between;
     }
 
-    /*
-    FIX: Replaced flawed 'last-child' logic.
-    This now creates two products per row with a 40px gap between rows.
-  */
+
     .product-item {
         width: calc(50% - 20px);
-        /* Adjust width for a consistent gap */
         margin-bottom: 40px;
     }
 
@@ -837,21 +829,16 @@ p {
         justify-content: center;
         align-items: center;
 
-        /* Make it a full-screen overlay */
         position: fixed;
-        /* Fixed, so it covers the whole viewport */
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.95);
-        /* A semi-transparent black background */
-
-        /* Ensure it's on top of everything */
+        
         z-index: 999;
     }
 
-    /* Make the links bigger and white */
     .nav--open .nav-link {
         font-size: 20px;
         color: #fff;
@@ -872,7 +859,6 @@ p {
 
 @media (min-width: 641px) and (max-width: 1200px) {
 
-    /* --- Your existing tablet styles --- */
     .content-wrapper {
         flex-direction: row;
         justify-content: space-between;
@@ -922,7 +908,6 @@ p {
         position: relative;
         /* Added for z-index */
         z-index: 1000;
-        /* Added to keep it above the overlay */
     }
 
     .nav--open {
@@ -967,7 +952,6 @@ p {
 
 @media (max-width: 640px) {
 
-    /* --- Your existing mobile layout styles (KEEP THESE) --- */
     .header {
         min-height: 100vh;
         background-image: url('../images/banner-mobile.jpg');
@@ -985,7 +969,6 @@ p {
         left: 0;
         right: 0;
         z-index: 100;
-        /* <--- INCREASED Z-INDEX TO FIX BUG */
     }
 
     .logo {
