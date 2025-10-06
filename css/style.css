@@ -807,6 +807,17 @@ p {
         margin-right: 0;
     }
 
+    .article {
+        padding-bottom: 25px; /* Добавляем отступ снизу внутри блока статьи */
+        margin-bottom: 35px; /* Добавляем отступ снаружи, между статьями */
+        border-bottom: 1px solid #eee; /* Рисуем тонкую серую линию-границу */
+    }
+    .article:last-child {
+        border-bottom: none; /* Убираем границу у самой последней статьи */
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
     .sidebar {
         width: 100%;
         margin-top: 40px;
