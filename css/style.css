@@ -835,6 +835,10 @@ p {
         margin-bottom: 40px; /* Добавляем отступ снизу для рядов */
     }
 
+    .trending-item {
+    flex: none;
+    }
+
     .nav--open {
         display: flex;
         flex-direction: column;
