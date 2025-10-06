@@ -819,8 +819,9 @@ p {
 
 
     .product-item {
-        width: calc(50% - 20px);
-        margin-bottom: 40px;
+        flex: none; /* Отключаем растягивание, как советовал наставник */
+        width: calc(50% - 30px); /* Задаем ширину для двух колонок с учетом gap */
+        margin-bottom: 40px; /* Добавляем отступ снизу для рядов */
     }
 
     .nav--open {
@@ -1013,6 +1014,10 @@ p {
         .trending-item {
             width: 100%;
         }
+    }
+
+    .product-item {
+        width: 100%; /* Делаем товары на всю ширину на мобильных */
     }
 
     .nav {
