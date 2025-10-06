@@ -111,14 +111,13 @@ p {
     background-color: #000;
     background-image: url('../images/banner-bg.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     padding-top: 30px;
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
 }
+
 .header::after {
     content: '';
     position: absolute;
@@ -154,30 +153,49 @@ p {
     text-transform: uppercase;
     font-size: 13px;
 }
+
 .nav-link:hover {
     text-decoration: underline;
 }
 
 .menu-burger {
-    display: none; /* Скрыт по умолчанию */
+    display: none;
+    /* Скрыт по умолчанию */
+    width: 24px;
+    /* Размер как в дизайне */
+    height: 18px;
+    /* Размер как в дизайне */
     background-color: transparent;
     border: none;
     cursor: pointer;
+    position: relative;
     padding: 0;
     z-index: 3;
 }
 
-.menu-burger-icon {
-    display: block;
-    width: 24px;
-    height: 18px;
+.menu-burger-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* Толщина как в дизайне */
     background-color: #fff;
-    -webkit-mask-image: url('../images/burger_mobile.svg');
-    mask-image: url('../images/burger_mobile.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
+    transition: all 0.3s ease;
 }
 
+/* Этот блок кода надежно располагает 3 линии */
+.menu-burger-line:nth-child(1) {
+    top: 0;
+}
+
+.menu-burger-line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-burger-line:nth-child(3) {
+    bottom: 0;
+}
 
 
 .intro {
