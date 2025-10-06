@@ -876,24 +876,10 @@ p {
     }
 
     .trending-grid {
-        flex-wrap: wrap; /* Разрешаем перенос блоков на новую строку */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
-
-    .trending-item {
-        flex: none; /* Отключаем растягивание, как советовал наставник */
-    }
-
-    /* Правила для ориентации планшета */
-    @media (orientation: landscape) {
-        /* Горизонтальная: 4 в ряд */
-        .trending-item {
-            width: calc(25% - 3px);
-        }
-    }
-    @media (orientation: portrait) {
-        /* Вертикальная: 2 в ряд */
-        .trending-item {
-            width: calc(50% - 2px);
 
     .article-image-container {
         width: 100%;
@@ -916,7 +902,7 @@ p {
         display: none;
     }
 
-  
+
     .menu-burger {
         display: block;
         position: relative;
@@ -1012,7 +998,23 @@ p {
         margin-right: 0;
         margin-bottom: 15px;
     }
-    
+
+    .trending-grid {
+        flex-wrap: wrap;
+    }
+
+    @media (orientation: landscape) {
+        .trending-item {
+            width: calc(50% - 2px);
+        }
+    }
+
+    @media (orientation: portrait) {
+        .trending-item {
+            width: 100%;
+        }
+    }
+
     .nav {
         display: none;
     }
@@ -1057,29 +1059,4 @@ p {
     .nav--open .nav-link:hover {
         background-color: #f5f5f5;
     }
-
-    .trending-grid {
-        flex-wrap: wrap;
-        flex-direction: row; /* Убеждаемся, что блоки идут в ряд и переносятся */
-    }
-    
-    .trending-item {
-        flex: none; /* Отключаем растягивание */
-    }
-    
-    /* Правила для ориентации мобильного устройства */
-    @media (orientation: landscape) {
-        /* Горизонтальная: 2 в ряд */
-        .trending-item {
-            width: calc(50% - 2px);
-        }
-    }
-    @media (orientation: portrait) {
-        /* Вертикальная: 1 в ряд */
-        .trending-item {
-            width: 100%;
-       }
-    }
 }
-
-
