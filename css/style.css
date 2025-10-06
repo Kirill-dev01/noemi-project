@@ -118,7 +118,7 @@ p {
     z-index: 1;
     display: flex;
     flex-direction: column;
-
+}
 .header::after {
     content: '';
     position: absolute;
@@ -160,36 +160,24 @@ p {
 
 .menu-burger {
     display: none; /* Скрыт по умолчанию */
-    width: 24px;
-    height: 18px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    position: relative;
     padding: 0;
     z-index: 3;
 }
 
-.menu-burger-line {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;
+.menu-burger-icon {
+    display: block;
+    width: 24px;
+    height: 18px;
     background-color: #fff;
+    -webkit-mask-image: url('../images/burger_mobile.svg');
+    mask-image: url('../images/burger_mobile.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
 }
 
-.menu-burger-line:nth-child(1) {
-    top: 0;
-}
-
-.menu-burger-line:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.menu-burger-line:nth-child(3) {
-    bottom: 0;
-}
 
 
 .intro {
